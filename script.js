@@ -52,6 +52,6 @@ function toggleDone(e) {
 	populateList(tasks, list);
 }
 
-addTasks.addEventListener("submit", addTask);
+AddTasks.addEventListener("submit", addTask);
 list.addEventListener("click", toggleDone);
 populateList(tasks,list);

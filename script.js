@@ -8,7 +8,7 @@ function addTask(event) {
 
 	const newTask = {
 		text,
-		done = false,
+		done: false,
 	};
 	tasks.push(newTask);
 	populateList(tasks,list);

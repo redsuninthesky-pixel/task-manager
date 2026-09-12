@@ -47,7 +47,7 @@ function toggleDone(e) {
 	if(!e.target.matches("input")) return;
 	const element = e.target;
 	const index = element.dataset.index;
-	tasks[index].done = !tasks[index].done;
+	tasks.splice(index,1);
 	localStorage.setItem("tasks",JSON.stringify(tasks));
 	populateList(tasks, list);
 }

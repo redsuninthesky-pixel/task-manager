@@ -4,7 +4,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function addTask(event) {
 	event.preventDefault();
-	const text = this.querySelector("[name = task]").value;
+	const text = this.querySelector("[name=task]").value;
 
 	const newTask = {
 		text,
@@ -26,6 +26,7 @@ function populateList(tasks = [], list) {
     checkbox.type = "checkbox";
     checkbox.id = "task" + i;
     checkbox.checked = task.done;
+    checkbox.dataset.index = i;
 
    
     const label = document.createElement("label");
@@ -47,7 +48,7 @@ function toggleDone(e) {
 	const element = e.target;
 	const index = element.dataset.index;
 	tasks[index].done = !tasks[index].done;
-	localStorager.setItem("tasks",JSON.stringify(tasks));
+	localStorage.setItem("tasks",JSON.stringify(tasks));
 	populateList(tasks, list);
 }
 

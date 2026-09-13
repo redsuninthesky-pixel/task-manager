@@ -52,6 +52,11 @@ function toggleDone(e) {
 	populateList(tasks, list);
 }
 
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  themeToggle.textContent = theme === "dark" ? "Light" : "Dark";
+}
+
 AddTasks.addEventListener("submit", addTask);
 list.addEventListener("click", toggleDone);
 populateList(tasks,list);

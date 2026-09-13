@@ -1,3 +1,27 @@
+:root {
+  --bg: #f4f4f2;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --border: #e0e0dd;
+  --border-light: #ececea;
+  --input-border: #d8d8d5;
+  --btn-bg: #1a1a1a;
+  --btn-text: #ffffff;
+  --btn-hover: #333333;
+}
+
+[data-theme="dark"] {
+  --bg: #17181a;
+  --card-bg: #242527;
+  --text: #f0f0f0;
+  --border: #3a3b3d;
+  --border-light: #333436;
+  --input-border: #45464a;
+  --btn-bg: #f0f0f0;
+  --btn-text: #1a1a1a;
+  --btn-hover: #d0d0d0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,19 +32,45 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f4f2;
+  background: var(--bg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: #1a1a1a;
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 64px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--border-light);
 }
 
 .wrapper {
   width: 100%;
   max-width: 560px;
-  background: #ffffff;
-  border: 1px solid #e0e0dd;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   padding: 40px;
   text-align: left;
   cursor: default;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .wrapper h2 {
@@ -34,7 +84,7 @@ body {
   list-style: none;
   margin: 0 0 20px;
   padding: 0;
-  border-top: 1px solid #ececea;
+  border-top: 1px solid var(--border-light);
 }
 
 .tasks li {
@@ -42,7 +92,7 @@ body {
   align-items: center;
   gap: 14px;
   padding: 16px 0;
-  border-bottom: 1px solid #ececea;
+  border-bottom: 1px solid var(--border-light);
   font-size: 18px;
 }
 
@@ -50,7 +100,7 @@ body {
   width: 20px;
   height: 20px;
   margin: 0;
-  accent-color: #1a1a1a;
+  accent-color: var(--text);
   cursor: pointer;
 }
 
@@ -66,28 +116,28 @@ body {
 .add-tasks input[type="text"] {
   flex: 1;
   padding: 12px 14px;
-  border: 1px solid #d8d8d5;
-  background: #fff;
+  border: 1px solid var(--input-border);
+  background: var(--card-bg);
+  color: var(--text);
   font-size: 16px;
-  color: #1a1a1a;
 }
 
 .add-tasks input[type="text"]:focus {
   outline: none;
-  border-color: #1a1a1a;
+  border-color: var(--text);
 }
 
 .add-tasks input[type="submit"] {
   padding: 12px 20px;
-  border: 1px solid #1a1a1a;
-  background: #1a1a1a;
-  color: #fff;
+  border: 1px solid var(--btn-bg);
+  background: var(--btn-bg);
+  color: var(--btn-text);
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .add-tasks input[type="submit"]:hover {
-  background: #333;
-  border-color: #333;
+  background: var(--btn-hover);
+  border-color: var(--btn-hover);
 }

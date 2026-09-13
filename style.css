@@ -84,6 +84,7 @@ body {
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .add-tasks input[type="submit"]:hover {
